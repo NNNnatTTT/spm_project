@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+  
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+  
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary colors */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 0%;
+    
+    /* Supporting colors */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 0%;
+    
+    /* System colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 0%;
+    
+    /* Sale price is red on Zalora */
+    --sale: 0 72% 51%;
+    --sale-foreground: 0 0% 100%;
+    
+    --radius: 0.25rem;
+    
+    /* Chart colors */
+    --chart-1: 0 0% 0%;
+    --chart-2: 220 70% 50%;
+    --chart-3: 142 76% 36%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    /* Light mode - Zalora uses a clean white/black scheme */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 0%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 0%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 0%;
+    
+    /* Zalora uses black for primary elements with white backgrounds */
+    --primary: 0 0% 0%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary colors */
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 0%;
+    
+    /* Supporting colors */
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 0 0% 96%;
+    --accent-foreground: 0 0% 0%;
+    
+    /* System colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 0%;
+    
+    /* Sale price is red on Zalora */
+    --sale: 0 72% 51%;
+    --sale-foreground: 0 0% 100%;
+    
+    --radius: 0.25rem;
+    
+    /* Chart colors */
+    --chart-1: 0 0% 0%;
+    --chart-2: 220 70% 50%;
+    --chart-3: 142 76% 36%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-medium tracking-tight;
+  }
+}
+
+/* Additional utility classes for Zalora-specific styling */
+@layer utilities {
+  .sale-price {
+    @apply text-[#e31837] font-medium;
+  }
+  .original-price {
+    @apply text-muted-foreground text-sm line-through;
+  }
+  .discount-tag {
+    @apply text-muted-foreground text-xs;
+  }
+  .product-title {
+    @apply text-sm font-medium line-clamp-2;
+  }
+  .product-brand {
+    @apply text-xs font-bold uppercase;
+  }
+  .zalora-button {
+    @apply bg-black text-white px-4 py-2 text-sm font-medium hover:bg-black/90;
+  }
+  .zalora-outline-button {
+    @apply border  bg-white text-black px-4 py-2 text-sm font-medium hover:bg-black/5;
+  }
+}
