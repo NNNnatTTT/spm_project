@@ -6,10 +6,10 @@ import { NextResponse } from 'next/server'
 export async function GET(
   request: Request,
   // { params }: { params: { id: string } }
-  context: { params: { id: string } }
+  { params }: { params: Record<string, string> }
 ) {
   // const { id } = params
-  const { id } = context.params;
+  const { id } = params.id;
 
   const { data, error } = await supabase
     .from('products')
