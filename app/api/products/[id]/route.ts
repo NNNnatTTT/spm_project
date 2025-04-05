@@ -5,9 +5,11 @@ import { NextResponse } from 'next/server'
 // To fetch a single product by its product_id
 export async function GET(
   request: Request,
-  { params }: { params: { id: string } }
+  // { params }: { params: { id: string } }
+  context: { params: { id: string } }
 ) {
-  const { id } = params
+  // const { id } = params
+  const { id } = context.params;
 
   const { data, error } = await supabase
     .from('products')
@@ -20,5 +22,8 @@ export async function GET(
     return NextResponse.json({ error: error.message }, { status: 500 })
   }
 
-  return NextResponse.json(data)
+  // return NextResponse.json(data)
+  return new Response(`You requested product with id: ${id}`, {
+    status: 200,
+  });
 }
